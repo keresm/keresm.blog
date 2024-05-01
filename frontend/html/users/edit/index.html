@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+    Настройки — {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="form-title">🕹<br>Настройки</div>
+
+        <div class="block dashboard">
+            <a href="{% url "edit_profile" user.slug %}" class="dashboard-item">
+                <span class="dashboard-item-icon">😎</span>
+                <span class="dashboard-item-title">Профиль</span>
+            </a>
+            <a href="{% url "edit_payments" user.slug %}" class="dashboard-item">
+                <span class="dashboard-item-icon">💰</span>
+                <span class="dashboard-item-title">Деньги</span>
+            </a>
+
+            <a href="{% url "edit_notifications" user.slug %}" class="dashboard-item">
+                <span class="dashboard-item-icon">🔔</span>
+                <span class="dashboard-item-title">Уведомления</span>
+            </a>
+
+            <a href="{% url "edit_data" user.slug %}" class="dashboard-item">
+                <span class="dashboard-item-icon">💾</span>
+                <span class="dashboard-item-title">Мои данные</span>
+            </a>
+
+            <a href="{% url "apps" %}" class="dashboard-item">
+                <span class="dashboard-item-icon">🤖</span>
+                <span class="dashboard-item-title">API</span>
+            </a>
+
+            <a href="{% url "edit_account" user.slug %}" class="dashboard-item">
+                <span class="dashboard-item-icon">🧨</span>
+                <span class="dashboard-item-title">Удалить аккаунт</span>
+            </a>
+        </div>
+    </div>
+{% endblock %}
